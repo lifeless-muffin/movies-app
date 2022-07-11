@@ -1,1 +1,1 @@
-movie/tv show streaming and scraping site, made using React.js, and Redux. This project was inspired by James...'s movie-web project, and it's soley made for educational purposes
+movie/tv show detail viewer, made using React, and Redux. All information is provided by https://www.themoviedb.org/ api
