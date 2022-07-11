@@ -3,14 +3,10 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { API_XTOKEN, URL } from '../../constants';
 import fetchEndpoint from '../../services/utilities/api.service';
-import { updateStreamLoading } from '../../slicers/stateSlicer';
-import StreamButton from '../buttons/StreamButton';
 import MovieDetails from './MovieDetails';
 
 export default function Movie({data, type, onKeyDown}) {
 
-  const [loadingStreams, setLoadingStreams] = useState(true); 
-  const [streamsList, setStreamsList] = useState([]);
   const [posterPath, setPosterPath] = useState('');
 
   const [movieDetails, setMovieDetails] = useState({});
@@ -18,7 +14,6 @@ export default function Movie({data, type, onKeyDown}) {
   const [error, setError] = useState(false);
 
   let title = () => type === 1 ? data?.name : data?.title;
-  const dispatch = useDispatch()
 
   // getting image url
   const getPosterUrl = () => {
@@ -28,10 +23,6 @@ export default function Movie({data, type, onKeyDown}) {
   // set the poster path to broken image
   const brokenImage = () => {
     setPosterPath('/assets/images/fallback-image.png');
-  }
-
-  const updateMovieStreams = async () => {
-    dispatch(updateStreamLoading(true))
   }
 
   // fetch and update movie details
@@ -93,11 +84,6 @@ export default function Movie({data, type, onKeyDown}) {
             onError={brokenImage}
           />
         </PosterWrapper>
-
-        <StreamButton
-          streamLoading={loadingStreams}
-        />
-
       </ColOne>
 
       <MovieDetails
