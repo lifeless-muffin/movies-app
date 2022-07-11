@@ -83,8 +83,7 @@ export default function GridTypeAItem({data, type, query, setSelectedItem}) {
             <Image
                 className={posterHovered === 'hovered' && 'zoom_in' }
                 src={posterPath}
-                alt={() => formatTitle()}
-                data-src={() => getPosterUrl()}
+                alt={formatTitle}
                 onError={brokenImage}
             />
           </PosterImage>

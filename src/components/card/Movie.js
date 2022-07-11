@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { API_XTOKEN, URL } from '../../constants';
-import fetchEndpoint from '../../services/utilities/fetch.service';
+import fetchEndpoint from '../../services/utilities/api.service';
 import { updateStreamLoading } from '../../slicers/stateSlicer';
 import StreamButton from '../buttons/StreamButton';
 import MovieDetails from './MovieDetails';
